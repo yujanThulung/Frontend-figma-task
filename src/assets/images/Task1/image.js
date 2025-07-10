@@ -1,14 +1,25 @@
-import img1 from './img1.png'
-import img2 from './img2.png'
-import img3 from './img3.png'
-import img4 from './img4.png'
-import img5 from './img5.png'
-import img6 from './img6.png'
-import img7 from './img7.png'
+import img1 from "./img1.png";
+import img2 from "./img2.png";
+import img3 from "./img3.png";
+import img4 from "./img4.png";
+import img6 from "./img6.png";
+import img7 from "./img7.png";
 
-import likes from './likes.gif' 
-import thumb from './thumb.gif'
-import trophy from './trophy.gif'
+import likes from "./likes.gif";
+import thumb from "./thumb.gif";
+import trophy from "./trophy.gif";
 
+export const profileImages = [
+    { src: img1, alt: "img1" },
+    { src: img2, alt: "img2" },
+    { src: img3, alt: "img3" },
+    { src: img4, alt: "img4" },
+    { src: img6, alt: "img6" },
+    { src: img7, alt: "img7" },
+];
 
-export {img1, img2, img3, img4, img5, img6, img7, likes, thumb, trophy}
+export const gifIcons = [
+    { src: likes, alt: "likes" },
+    { src: thumb, alt: "thumb" },
+    { src: trophy, alt: "trophy" },
+];

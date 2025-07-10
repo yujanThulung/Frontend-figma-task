@@ -5,7 +5,7 @@ const SmallImage = ({ src, alt = 'image', className = '' }) => {
     <img 
       src={src} 
       alt={alt}
-      className={`w-25 h-25 object-cover rounded-4xl ${className}`}
+      className={`w-25 h-25 object-cover  ${className}`}
     />
   );
 };

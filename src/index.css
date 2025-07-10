@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+@font-face{
+    font-family: 'nohemi';
+    src: url('./assets/fonts/NOHEMI-VF-BF6438CC58AD63D.TTF');
+}
+
+@font-face {
+    font-family: 'outfit';
+    src: url('./assets//fonts/OUTFIT-VARIABLEFONT_WGHT.TTF');
+}
+
+
+
+@theme{
+    --font-nohemi: nohemi, sans-serif;
+    --font-outfit: outfit, sans-serif;
+}

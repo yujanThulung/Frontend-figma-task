@@ -10,6 +10,8 @@ import thumb from "./thumb.gif";
 import trophy from "./trophy.gif";
 import happy from "./happy.gif";
 
+import svg1 from "./Tooltip.svg";
+
 export const profileImages = [
     { src: img1, alt: "img1" },
     { src: img2, alt: "img2" },
@@ -25,3 +27,7 @@ export const gifIcons = [
     { src: trophy, alt: "trophy" },
     { src: happy, alt: "happy" }, 
 ];
+
+export const svgFile = [
+    {src: svg1, alt: "Tooltip"},
+]

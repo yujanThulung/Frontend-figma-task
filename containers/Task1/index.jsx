@@ -6,8 +6,27 @@ import GreenText from "../../components/GreenText/GreenText";
 import CTAButton from "../../components/CTAButton/CTAButton";
 import SmallImage from "../../components/SmallImage/SmallImage";
 import GifIcon from "../../components/GifIcon/GifIcon";
+import svg from "../../src/assets/images/Task1/Tooltip.svg";
 
-import { profileImages, gifIcons } from "../../src/assets/images/Task1/image.js";
+import { profileImages, gifIcons, svgFile } from "../../src/assets/images/Task1/image.js";
+import CustomTooltip from "../../components/ToolTip/CustomTooltip.jsx";
+
+const textRating ="Amazing"
+const stars = "⭐⭐⭐⭐⭐";
+
+const testimonialText = (
+    <div>
+        <p className="text-gray-700  text-sm leading-relaxed italic">
+            “I was amazed and impressed by the course structure as it was distinctly different from
+            other courses in the market. The classes were highly interactive and the instructor was
+            very humble and friendly...”
+        </p>
+        <div className="text-right">
+            <p className="text-sm font-semibold text-gray-800">– Rajesh Dhakal</p>
+            <p className="text-xs text-gray-500">Digital Marketing Student</p>
+        </div>
+    </div>
+);
 
 const TestimonialSection = () => {
     return (
@@ -36,12 +55,40 @@ const TestimonialSection = () => {
                     const hoverClass = hoverPositions[index % hoverPositions.length];
 
                     return (
-                        <SmallImage
+                        <div
                             key={index}
-                            src={image.src}
-                            alt={image.alt}
                             className={`absolute transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${positionClass} ${hoverClass}`}
-                        />
+                        >
+                            {index === 0 ? (
+                                <CustomTooltip
+                                    position="right"
+                                    text="Amazing"
+                                    stars=" ⭐⭐⭐⭐⭐"
+                                    hoverText={testimonialText}
+                                    
+                                    
+                                >
+                                    <SmallImage
+                                        src={profileImages[index].src}
+                                        alt="Profile Image"
+                                    />
+                                </CustomTooltip>
+                            ) : index === 5 ? (
+                                <>
+                                <CustomTooltip
+                                    position="top"
+                                    hoverText={<img src={svgFile[0].src}/>}
+                                    >
+                                    <SmallImage
+                                        src={profileImages[index].src}
+                                        alt="Profile Image"
+                                    />
+                                </CustomTooltip>
+</>
+                            )  : (
+                                <SmallImage src={image.src} alt={image.alt} />
+                            )}
+                        </div>
                     );
                 })}
 

@@ -12,9 +12,9 @@ import { profileImages, gifIcons } from "../../src/assets/images/Task1/image.js"
 const TestimonialSection = () => {
     return (
         <section className="relative w-full min-h-screen bg-white flex items-center justify-center py-20 px-4">
-            <div className=" w-[400px] h-[400px] flex items-center justify-center">
+            <div className="group w-[400px] h-[400px] flex items-center justify-center">
                 {profileImages.map((image, index) => {
-                    const positions = [
+                    const basePositions = [
                         "top-[20%] left-[36%]",
                         "bottom-[28%] left-[36%]",
                         "top-[20%] right-[42%]",
@@ -22,14 +22,25 @@ const TestimonialSection = () => {
                         "bottom-[45%] right-[30%]",
                         "bottom-[28%] right-[40%]",
                     ];
-                    const positionClass = positions[index % positions.length];
+
+                    const hoverPositions = [
+                        "group-hover:top-[10%] group-hover:left-[28%]",
+                        "group-hover:bottom-[12%] group-hover:left-[30%]",
+                        "group-hover:top-[10%] group-hover:right-[28%]",
+                        "group-hover:bottom-[44%] group-hover:left-[14%]",
+                        "group-hover:bottom-[45%] group-hover:right-[14%]",
+                        "group-hover:bottom-[12%] group-hover:right-[30%]",
+                    ];
+
+                    const positionClass = basePositions[index % basePositions.length];
+                    const hoverClass = hoverPositions[index % hoverPositions.length];
 
                     return (
                         <SmallImage
                             key={index}
                             src={image.src}
                             alt={image.alt}
-                            className={`absolute ${positionClass}`}
+                            className={`absolute transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${positionClass} ${hoverClass}`}
                         />
                     );
                 })}
@@ -37,20 +48,27 @@ const TestimonialSection = () => {
                 {gifIcons.map((gif, index) => {
                     const iconPositions = [
                         "top-[20%] right-[50%]",
-                        "bottom-[26%] right-[30%]",
+                        "bottom-[30%] right-[32%]",
                         "bottom-[28%] left-[45%]",
                         "bottom-[30%] left-[28%]",
                     ];
 
-                    
+                    const hoverIconPositions = [
+                        "group-hover:top-[12%] group-hover:right-[50%]",
+                        "group-hover:bottom-[30%] group-hover:right-[28%]",
+                        "group-hover:bottom-[12%] group-hover:left-[45%]",
+                        "group-hover:bottom-[30%] group-hover:left-[24%]",
+                    ];
+
                     const iconPositionClass = iconPositions[index % iconPositions.length];
+                    const iconHoverClass = hoverIconPositions[index % hoverIconPositions.length];
 
                     return (
                         <GifIcon
                             key={index}
                             src={gif.src}
                             alt={gif.alt}
-                            className={`absolute ${iconPositionClass}`}
+                            className={`absolute transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${iconPositionClass} ${iconHoverClass}`}
                         />
                     );
                 })}

@@ -8,6 +8,7 @@ import img7 from "./img7.png";
 import likes from "./likes.gif";
 import thumb from "./thumb.gif";
 import trophy from "./trophy.gif";
+import happy from "./happy.gif";
 
 export const profileImages = [
     { src: img1, alt: "img1" },
@@ -19,7 +20,8 @@ export const profileImages = [
 ];
 
 export const gifIcons = [
-    { src: likes, alt: "likes" },
     { src: thumb, alt: "thumb" },
+    { src: likes, alt: "likes" },
     { src: trophy, alt: "trophy" },
+    { src: happy, alt: "happy" }, 
 ];
